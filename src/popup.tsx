@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
+import { useI18n } from "./i18n";
 
 const Popup = () => {
+  const { t } = useI18n();
   const [count, setCount] = useState(0);
   const [currentURL, setCurrentURL] = useState<string>();
 
@@ -34,6 +36,7 @@ const Popup = () => {
 
   return (
     <>
+      <h1>{t("popupTitle")}</h1>
       <ul style={{ minWidth: "700px" }}>
         <li>Current URL: {currentURL}</li>
         <li>Current Time: {new Date().toLocaleTimeString()}</li>
