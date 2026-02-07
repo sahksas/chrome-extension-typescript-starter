@@ -4,7 +4,8 @@ Chrome Extension, TypeScript and Visual Studio Code
 
 ## Prerequisites
 
-- [node + npm](https://nodejs.org/) (Current Version)
+- [node](https://nodejs.org/) (Current Version)
+- [pnpm](https://pnpm.io/)
 
 ## Option
 
@@ -16,34 +17,31 @@ Chrome Extension, TypeScript and Visual Studio Code
 - Webpack
 - React
 - Jest
+- Prettier
+- i18n (Internationalization)
 - Example Code
-  - Chrome Storage
-  - Options Version 2
+  - popup
+  - options
   - content script
-  - count up badge number
-  - background
+  - background (service worker)
 
 ## Project Structure
 
-- src/typescript: TypeScript source files
-- src/assets: static files
-- dist: Chrome Extension directory
+- src: TypeScript source files
+- public: static files (manifest.json, HTML, icons, _locales)
+- dist: Chrome Extension directory (build output)
 - dist/js: Generated JavaScript files
 
 ## Setup
 
 ```
-npm install
+pnpm install
 ```
-
-## Import as Visual Studio Code project
-
-...
 
 ## Build
 
 ```
-npm run build
+pnpm build
 ```
 
 ## Build in watch mode
@@ -51,7 +49,7 @@ npm run build
 ### terminal
 
 ```
-npm run watch
+pnpm watch
 ```
 
 ### Visual Studio Code
@@ -60,10 +58,22 @@ Run watch mode.
 
 type `Ctrl + Shift + B`
 
+## Clean build output
+
+```
+pnpm clean
+```
+
+## Format code
+
+```
+pnpm format
+```
+
 ## Load extension to chrome
 
 Load `dist` directory
 
 ## Test
 
-`npx jest` or `npm run test`
+`pnpm test`
