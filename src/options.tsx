@@ -14,7 +14,7 @@ const Options = () => {
         favoriteColor: "red",
         likesColor: true,
       },
-      (items) => {
+      (items: { favoriteColor: string; likesColor: boolean }) => {
         setColor(items.favoriteColor);
         setLike(items.likesColor);
       }
