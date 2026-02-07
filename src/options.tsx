@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
+import { useI18n } from "./i18n";
 
 const Options = () => {
+  const { t } = useI18n();
   const [color, setColor] = useState<string>("");
   const [status, setStatus] = useState<string>("");
   const [like, setLike] = useState<boolean>(false);
@@ -30,7 +32,7 @@ const Options = () => {
       },
       () => {
         // Update status to let user know options were saved.
-        setStatus("Options saved.");
+        setStatus(t("settingsSaved"));
         const id = setTimeout(() => {
           setStatus("");
         }, 1000);
@@ -41,6 +43,7 @@ const Options = () => {
 
   return (
     <>
+      <h1>{t("optionsTitle")}</h1>
       <div>
         Favorite color:{" "}
         <select
